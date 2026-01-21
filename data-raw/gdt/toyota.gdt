@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="toyota" frequency="1" startobs="1" endobs="57" type="cross-section">
+<description>
+DATA3-7:  Data for a Toyota station wagon (57 observations)
+    cost  = cumulative repair cost in actual dollars (11 - 3425)
+    age   = age of car in weeks of ownership (Range 5 - 538)
+    miles = miles driven in thousands (Range 0.8 - 74.4)
+</description>
+<variables count="5">
+<variable name="cost"
+ label="cumulative repair cost in actual dollars (11 - 3425)"
+/>
+<variable name="age"
+ label="age of car in weeks of ownership (Range 5 - 538)"
+/>
+<variable name="miles"
+ label="miles driven in thousands (Range 0.8 - 74.4)"
+/>
+<variable name="old"
+ label="obs&gt;=42 &amp;&amp; obs&lt;=57"
+/>
+<variable name="old_miles"
+ label="old*miles"
+/>
+</variables>
+<observations count="57" labels="false">
+<obs>11 5 0.8 0 0 </obs>
+<obs>16 12 3 0 0 </obs>
+<obs>55 30 4.9 0 0 </obs>
+<obs>66 40 7.1 0 0 </obs>
+<obs>76 42 7.6 0 0 </obs>
+<obs>83 53 10.1 0 0 </obs>
+<obs>135 66 12 0 0 </obs>
+<obs>160 73 12.8 0 0 </obs>
+<obs>163 79 13.9 0 0 </obs>
+<obs>211 101 18.6 0 0 </obs>
+<obs>258 114 21.1 0 0 </obs>
+<obs>322 129 23.2 0 0 </obs>
+<obs>374 150 25.3 0 0 </obs>
+<obs>408 180 28.7 0 0 </obs>
+<obs>478 195 30.5 0 0 </obs>
+<obs>489 196 30.6 0 0 </obs>
+<obs>536 204 31.4 0 0 </obs>
+<obs>590 212 32.9 0 0 </obs>
+<obs>604 224 35.3 0 0 </obs>
+<obs>704 227 35.3 0 0 </obs>
+<obs>985 232 36.6 0 0 </obs>
+<obs>1021 235 37 0 0 </obs>
+<obs>1030 239 38.1 0 0 </obs>
+<obs>1096 249 39.5 0 0 </obs>
+<obs>1114 260 40.7 0 0 </obs>
+<obs>1134 271 43 0 0 </obs>
+<obs>1157 272 43.1 0 0 </obs>
+<obs>1176 273.5 43.2 0 0 </obs>
+<obs>1182 276 43.4 0 0 </obs>
+<obs>1182 279 43.7 0 0 </obs>
+<obs>1231 281 44.3 0 0 </obs>
+<obs>1244 313 47.6 0 0 </obs>
+<obs>1257 326 48.9 0 0 </obs>
+<obs>1260 328 49.1 0 0 </obs>
+<obs>1342 329 49.2 0 0 </obs>
+<obs>1356 336.5 50 0 0 </obs>
+<obs>1467 338 50.1 0 0 </obs>
+<obs>1518 342.5 50.6 0 0 </obs>
+<obs>1557 344.5 50.8 0 0 </obs>
+<obs>1565 351 51.6 0 0 </obs>
+<obs>1583 366 53.2 0 0 </obs>
+<obs>1609 384 55.7 1 55.7 </obs>
+<obs>2825 388 56 1 56 </obs>
+<obs>2893 402 57.3 1 57.3 </obs>
+<obs>2918 432 60.2 1 60.2 </obs>
+<obs>3011 433 60.3 1 60.3 </obs>
+<obs>3077 436 60.6 1 60.6 </obs>
+<obs>3095 446 63 1 63 </obs>
+<obs>3154 456 63.7 1 63.7 </obs>
+<obs>3162 463.5 63.9 1 63.9 </obs>
+<obs>3217 465 65.1 1 65.1 </obs>
+<obs>3274 478 65.8 1 65.8 </obs>
+<obs>3320 485 67.7 1 67.7 </obs>
+<obs>3329 498.5 72.1 1 72.1 </obs>
+<obs>3401 526 72.1 1 72.1 </obs>
+<obs>3412 527 73.6 1 73.6 </obs>
+<obs>3425 538 74.4 1 74.4 </obs>
+</observations>
+</gretldata>

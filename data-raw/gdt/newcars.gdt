@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="newcars" frequency="12" startobs="2020:01" endobs="2023:11" type="time-series">
+<description>Data imported from CSV file 'cliptmp.txt', 2024-03-08 15:31
+</description>
+<variables count="3">
+<variable name="electric"
+/>
+<variable name="fossil"
+/>
+<variable name="hybrid"
+/>
+</variables>
+<observations count="47" labels="false">
+<obs>4227 1867 3468 </obs>
+<obs>5142 1917 3291 </obs>
+<obs>6962 1917 3574 </obs>
+<obs>3665 1467 2292 </obs>
+<obs>3443 1556 3004 </obs>
+<obs>5026 2400 4030 </obs>
+<obs>4404 1966 3401 </obs>
+<obs>5702 1976 3132 </obs>
+<obs>9560 1393 4603 </obs>
+<obs>7873 1149 3932 </obs>
+<obs>7032 1064 4439 </obs>
+<obs>13717 1192 5672 </obs>
+<obs>5460 883 3961 </obs>
+<obs>5074 1011 4604 </obs>
+<obs>8623 977 5730 </obs>
+<obs>7228 1049 4891 </obs>
+<obs>8499 787 4787 </obs>
+<obs>13182 1154 6060 </obs>
+<obs>6724 643 3136 </obs>
+<obs>11809 963 3657 </obs>
+<obs>13949 615 3441 </obs>
+<obs>8114 455 3012 </obs>
+<obs>11273 551 3451 </obs>
+<obs>13803 983 5779 </obs>
+<obs>6659 271 1029 </obs>
+<obs>6160 532 1458 </obs>
+<obs>13979 536 1720 </obs>
+<obs>7203 517 2002 </obs>
+<obs>8446 548 2546 </obs>
+<obs>11721 714 2467 </obs>
+<obs>5123 454 1670 </obs>
+<obs>9247 596 2520 </obs>
+<obs>11377 577 2686 </obs>
+<obs>9726 581 2251 </obs>
+<obs>15915 510 3087 </obs>
+<obs>32714 1219 5566 </obs>
+<obs>1237 149 475 </obs>
+<obs>6183 258 1000 </obs>
+<obs>16812 431 2130 </obs>
+<obs>7471 343 1163 </obs>
+<obs>10772 367 2205 </obs>
+<obs>12802 455 2312 </obs>
+<obs>6148 256 1123 </obs>
+<obs>9251 356 1478 </obs>
+<obs>9000 216 1131 </obs>
+<obs>7516 227 1186 </obs>
+<obs>8442 218 1691 </obs>
+</observations>
+</gretldata>

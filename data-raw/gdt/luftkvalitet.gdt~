@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="luftkvalitet" frequency="1" startobs="1" endobs="30" type="cross-section">
+<description>Data imported from CSV file 'cliptmp.txt', 2022-11-04 12:20
+</description>
+<variables count="4">
+<variable name="Y"
+/>
+<variable name="X"
+/>
+<variable name="Z"
+/>
+<variable name="XZ"
+ label="X*Z"
+/>
+</variables>
+<observations count="30" labels="false">
+<obs>104 2734.4 1 2734.4 </obs>
+<obs>85 2479.2 1 2479.2 </obs>
+<obs>127 4845 1 4845 </obs>
+<obs>145 19733.8 0 0 </obs>
+<obs>84 4093.6 1 4093.6 </obs>
+<obs>135 1849.8 0 0 </obs>
+<obs>88 4179.4 1 4179.4 </obs>
+<obs>118 2525.3 0 0 </obs>
+<obs>74 1899.2 1 1899.2 </obs>
+<obs>104 15257.1 1 15257.1 </obs>
+<obs>64 1219 1 1219 </obs>
+<obs>75 992.9 1 992.9 </obs>
+<obs>131 15120.8 1 15120.8 </obs>
+<obs>129 9189.9 1 9189.9 </obs>
+<obs>84 1596.9 1 1596.9 </obs>
+<obs>165 4157.3 1 4157.3 </obs>
+<obs>80 1185.2 1 1185.2 </obs>
+<obs>59 3817.7 1 3817.7 </obs>
+<obs>110 1686.2 0 0 </obs>
+<obs>120 1322 1 1322 </obs>
+<obs>118 3476.2 1 3476.2 </obs>
+<obs>120 1123.8 1 1123.8 </obs>
+<obs>120 1151.6 0 0 </obs>
+<obs>59 2896.3 1 2896.3 </obs>
+<obs>74 5608.6 1 5608.6 </obs>
+<obs>124 3700 0 0 </obs>
+<obs>69 1395.5 1 1395.5 </obs>
+<obs>118 3022.8 0 0 </obs>
+<obs>129 1515.4 0 0 </obs>
+<obs>129 1878.9 0 0 </obs>
+</observations>
+</gretldata>

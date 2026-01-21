@@ -1,0 +1,37 @@
+---
+title: "Assignment"
+bibliography: ref.bib
+---
+
+```{r}
+#| echo=F
+source('rscript.R')
+```
+
+`r hello`
+
+adfad
+
+# Introduction
+
+Write here and then save
+
+adfadf
+
+adfad
+
+adfa
+
+qadfad
+
+# Abc
+
+# Def
+
+According to [@knuth84]
+
+# Conclusions
+
+# References
+
+write some more stuff

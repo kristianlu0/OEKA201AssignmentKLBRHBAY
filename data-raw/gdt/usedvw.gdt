@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="golfs" frequency="1" startobs="1" endobs="41" type="cross-section">
+<description>Data imported from CSV file 'vw.csv', 2024-03-08 11:51
+</description>
+<variables count="6">
+<variable name="model"
+ discrete="true"
+/>
+<variable name="price"
+/>
+<variable name="transmission"
+ discrete="true"
+/>
+<variable name="mileage"
+/>
+<variable name="fuelType"
+ discrete="true"
+/>
+<variable name="age"
+/>
+</variables>
+<observations count="41" labels="false">
+<obs>1 25450 1 3826 1 5 </obs>
+<obs>2 17298 2 4724 1 5 </obs>
+<obs>2 17998 3 6636 2 8 </obs>
+<obs>2 12995 2 15876 1 8 </obs>
+<obs>2 16290 3 17555 1 6 </obs>
+<obs>2 16490 2 9456 1 7 </obs>
+<obs>2 22990 3 1657 1 4 </obs>
+<obs>2 11700 2 36062 2 8 </obs>
+<obs>2 21999 2 248 1 4 </obs>
+<obs>2 11880 2 14783 1 5 </obs>
+<obs>2 9695 2 130400 2 8 </obs>
+<obs>3 12489 3 56149 2 9 </obs>
+<obs>3 15299 1 28179 2 8 </obs>
+<obs>3 18199 1 6345 1 5 </obs>
+<obs>4 12995 2 2665 1 6 </obs>
+<obs>4 12995 2 15096 1 6 </obs>
+<obs>4 10172 2 31558 1 7 </obs>
+<obs>4 17690 2 50 1 5 </obs>
+<obs>4 9495 2 27900 1 8 </obs>
+<obs>4 10350 2 18743 1 7 </obs>
+<obs>4 7995 2 47379 1 9 </obs>
+<obs>4 16491 2 5000 1 5 </obs>
+<obs>4 16130 3 2833 1 5 </obs>
+<obs>4 14800 1 22746 1 8 </obs>
+<obs>4 10950 2 14364 1 7 </obs>
+<obs>4 9240 2 37268 1 8 </obs>
+<obs>4 9790 2 38412 1 8 </obs>
+<obs>5 17995 2 24534 2 7 </obs>
+<obs>5 25299 3 12598 2 6 </obs>
+<obs>5 21999 3 14158 1 5 </obs>
+<obs>5 17441 2 23400 1 7 </obs>
+<obs>5 15499 2 38170 2 7 </obs>
+<obs>5 18899 1 32878 2 7 </obs>
+<obs>6 16699 1 31683 2 8 </obs>
+<obs>7 6991 2 30000 1 7 </obs>
+<obs>7 6038 2 14072 1 8 </obs>
+<obs>7 9790 2 3201 1 5 </obs>
+<obs>8 13995 2 54045 2 9 </obs>
+<obs>9 39923 1 11385 2 5 </obs>
+<obs>10 21490 3 1177 1 4 </obs>
+<obs>11 27900 1 13764 2 6 </obs>
+</observations>
+<string-tables count="3">
+<valstrings owner="model" count="11">"T-Roc" "Golf" "Passat" "Polo" "Tiguan" "Sharan" "Up" "Scirocco" "Touareg" "Golf SV" "Amarok" </valstrings>
+<valstrings owner="transmission" count="3">"Automatic" "Manual" "Semi-Auto" </valstrings>
+<valstrings owner="fuelType" count="2">"Petrol" "Diesel" </valstrings>
+</string-tables>
+</gretldata>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="elbil2" frequency="1" startobs="1" endobs="6" type="cross-section">
+<description>Data imported from CSV file 'cliptmp.txt', 2022-11-18 12:03
+</description>
+<variables count="3">
+<variable name="Y"
+/>
+<variable name="X"
+/>
+<variable name="D"
+/>
+</variables>
+<observations count="6" labels="false">
+<obs>12.9 21 1 </obs>
+<obs>13.6 21 1 </obs>
+<obs>15.3 16 0 </obs>
+<obs>16.5 15 0 </obs>
+<obs>15.6 19 1 </obs>
+<obs>12.5 22 1 </obs>
+</observations>
+</gretldata>

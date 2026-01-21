@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gretldata SYSTEM "gretldata.dtd">
+
+<gretldata version="1.4" name="tidsserier" frequency="special:2" startobs="1:1" endobs="4:2" type="time-series">
+<variables count="5">
+<variable name="Y"
+/>
+<variable name="time"
+ label="time trend variable"
+/>
+<variable name="Y_1"
+ label="= Y(t - 1)"
+ parent="Y"
+ transform="lags"
+ lag="1"
+/>
+<variable name="dummy_1"
+ label="dummy_1 = 1 if period is 1, 0 otherwise"
+/>
+<variable name="dummy_2"
+ label="dummy_2 = 1 if period is 2, 0 otherwise"
+/>
+</variables>
+<observations count="8" labels="false">
+<obs>220 1 NA 1 0 </obs>
+<obs>300 2 220 0 1 </obs>
+<obs>240 3 300 1 0 </obs>
+<obs>350 4 240 0 1 </obs>
+<obs>290 5 350 1 0 </obs>
+<obs>400 6 290 0 1 </obs>
+<obs>NA 7 NA 1 0 </obs>
+<obs>NA 8 NA 0 1 </obs>
+</observations>
+</gretldata>
