@@ -159,9 +159,7 @@ In conclusion, the dummy variable analysis does not provide evidence that an inc
 
 In the multiple regression model, several additional variables were included in order to better explain mortality rates. The model includes income (INCC), the proportion of the population over 65 years (AGED), cigarette consumption (TOBC), and the proportion of the population with four or more years of college education (EDU2). By including these variables, the model considers both demographic factors and health-related behavior. This model has a much higher explanatory power, with an R-squared of 0.819, meaning that about 81.9% of the variation in mortality rates across states can be explained by the variables in the model. This also means that predictions from this model are more reliable compared to the simple regression.
 
-In the dummy variable model, states were divided into two groups depending on whether their income was above or below the sample mean. The idea was to test if there was some kind of threshold effect for income. However, the results show that the dummy variable is not statistically significant. This suggests that simply separating states into high-income and low-income groups does not explain mortality differences in a meaningful way.
-{{< pagebreak >}}
-
+In the dummy variable model, states were divided into two groups depending on whether their income was above or below the sample mean. The idea was to test if there was some kind of threshold effect for income. However, the results show that the dummy variable is not statistically significant. This suggests that simply separating states into high-income and low-income groups does not explain mortality differences in a meaningful way. {{< pagebreak >}}
 
 **b)** Based on the results from the analysis, the multiple regression model seems to be the most appropriate model for predicting mortality rates.
 
