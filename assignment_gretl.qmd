@@ -139,7 +139,7 @@ We can see that a higher income than the mean will lead to a lower mortality. Bu
 
 We can directly see that it these variables that have the biggest impact on mortality. With the control variables we can now account for 86% of the variation of the model. The model flags our dummy variable, since it’s having the biggest p-value for a non-constant.  We can therefore see that an income threshold doesn’t have an significant effect on mortality. The other control variables do though, where age has the biggest effect. We wanted to have a further look at it and found that 76% of the variation is explained by age alone.
 
-![](images/Bilde10.png)
+![](images/Bilde10.png){width="452"}
 
 This is quite ordinary, due to most death reporting’s in this health groups being from age-related diseases. {{< pagebreak >}}
 
@@ -147,7 +147,7 @@ This is quite ordinary, due to most death reporting’s in this health groups be
 
 This suggests that the observed differences in mortality rates between stats are not primarily driven by whether income is above or below the mean threshold. Instead, demographic factors, particularly the proportion of elderly individuals in the population, appear to play a much more important role. Age structure has the strongest impact on mortality rates, which is consistent with the fact that mortality naturally increases with age. To test this, we made a new dummy variable were wanted to how much of the model is explained by an age. We therefore made a dummy variable where the threshold is an age above the median. With this dummy variable we found that 40% of the model is explained by the dummy variable.
 
-![](images/Bilde11.png)
+![](images/Bilde11.png){width="284"}
 
 We can therefore see that aged is one of the major factors for explaining mortality.  We can also see that the states in with an age above the median has an higher mortality rate by 171.49, which provides further evidence for age being the major factor for explaining mortality. The P-value is also significant which provides evidence for that age being a factor in mortality.
 
