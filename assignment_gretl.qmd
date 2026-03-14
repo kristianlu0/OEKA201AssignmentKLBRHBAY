@@ -163,7 +163,7 @@ In the dummy variable model, states were divided into two groups depending on wh
 
 **b)** Based on the results from the analysis, the multiple regression model seems to be the most appropriate model for predicting mortality rates.
 
-The simple regression model performs poorly because it only includes income as an explanatory variable. Mortality is influenced by many different factors, and income alone is clearly not enough to explain the variation across states. This is also reflected in the very low R-squared value.
+The simple regression model performs poorly because it only includes income as an explanatory variable. Mortality is influenced by many different factors, and income alone is clearly not enough to explain the variation across states. We therefore have met the effect of omitted variable bias — this occurs when excluded variables, such as age distribution, smoking habits and education level, both affect mortality and are correlated with income. As a result, the coefficient on income absorbs the effect of these missing variables, which is also reflected in the very low R-squared value.
 
 The dummy variable model also does not perform as well as the multiple regression model. Even though it tries to capture differences between higher-income and lower-income states, the results show that the dummy variable is not statistically significant. This indicates that the threshold effect of income does not seem to play an important role in explaining mortality differences.
 
