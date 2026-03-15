@@ -4,7 +4,7 @@ author: "KLBRHBAY"
 format: pdf
 editor: visual
 ---
-
+TEST TEST TEST
 ![](images/Skjermbilde%202026-03-10%20115720.png) {{< pagebreak >}}
 
 # Step B: Analysis
