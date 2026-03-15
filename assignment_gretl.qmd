@@ -9,7 +9,7 @@ editor: visual
 
 # Step B: Analysis
 
-# **1:**
+# **1:** Data Description & Summary
 
 Research question (RQ): We aim to investigate the determinants of mortality rates across U.S. states.\
 Our research question is: “To what extent do socioeconomic factors & health-related behaviors influence mortality rates across states?”. 
@@ -24,7 +24,9 @@ Summary statistics:
 
 The dataset consists of 51 cross-sectional observations (all 50 states plus District of Columbia), with no missing values. The dependent variable MORT (mortality rates per 100 000 population), has a mean of 855,01 and a standard deviation of 137,97, ranging from 396,20 to 1120,5. The coefficient of variation is 0,16136 in the dependent variable. This is relevant for the research question because mortality rates vary meaningfully across states, making simple and multiple regression model analysis appropriate. {{< pagebreak >}}
 
-# **2.a)**
+# **2. Simple Regression Model**
+
+**a)**
 
 ![](images/Bilde3.png)
 
