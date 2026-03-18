@@ -172,3 +172,11 @@ The dummy variable model also does not perform as well as the multiple regressio
 The multiple regression model, on the other hand, includes several variables that are likely to influence mortality. In particular, the proportion of elderly people and cigarette consumption appear to have strong effects on mortality rates. The model also has a much higher R-squared value compared to the other models. Because of this, the multiple regression model provides a better and more realistic explanation of mortality differences across states.
 
 Overall, the multiple regression model seems to give the most reliable predictions and therefore it is the preferred model in this analysis.
+
+# Bibliography
+
+Maddalena Lettino, J. M. (2022, Februar 15). *Cardiovascular disease in the elderly: proceedings of the European Society of Cardiology—Cardiovascular Round Table - Oxford Academic*. Hentet fra Oxford Academic: https://academic.oup.com/eurjpc/article/29/10/1412/6529006
+
+National Center for Health Statistics. (u.d.). *FastStats - Leading Causes of Death*. Hentet Mars 15, 2026 fra FastStats: https://www.cdc.gov/nchs/fastats/leading-causes-of-death.htm
+
+Kivedal, B.K (2023) *Anvendt Statistikk og Økonometri* (1. utgave). Universitetsforlaget.
