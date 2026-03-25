@@ -1,19 +1,38 @@
 project:
   type: website
+  output-dir: docs
+  render:
+    - "index.qmd"
+    - "assignment_gretl.qmd"
+    - "assignment_r.qmd"
+#    - "AIrep/qmdrds/conv.qmd"
 
 website:
-  title: "OEKA201Assignment<KLBRHBAY>"
-  navbar:
+  title: "OEKA201AssignmentKLBRHBAY"
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      -  text: Home
+         href: index.qmd
+      -  text: Bjørnar's assignment using Gretl
+         href: assignment_gretl.qmd
+      -  text: Bjørnar's assignment using R
+         href: assignment_r.qmd
+    right:
+      - text: AI-conversation
+#        href: AIrep/qmdrds/conv.qmd
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
     toc: true
+# Add more stuff here
+  docx:
+    toc: true
+  pdf:
+    toc: true
+# Add more stuff here
+  epub:
+    toc: true
+# Add more stuff here
+bibliography: ref.bib
 
 
 
