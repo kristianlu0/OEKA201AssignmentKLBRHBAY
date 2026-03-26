@@ -1,6 +1,18 @@
 ---
 title: "OEKA201Assignment<KLBRHBAY>"
 ---
+## Welcome
+This website presents the assignments for OEKA201 completed by:
+- **Bertelsen, Fredrik-André Hov**
+- **Yousefi, Arya**
+- **Røijem, Bendik Strømme**
+- **Lund, Kristian**
+## About this website
+The site contains our econmetrics assignmetn analysing mortality rates across US states using socioeconomic & health-related variables.
+
+The assinment is presented in two versions:
+ - [Bjørnar's assignment using Gretl](assignment_gretl.qmd) - estimation and analysis performed in Gretl
+ - [Bjørnar's assignment using R](assignment_r.qmd) - the same analysis replicatied using R code
 
 This is a Quarto website.
 
