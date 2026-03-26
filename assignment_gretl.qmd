@@ -18,7 +18,7 @@ We use a cross-sectional dataset containing state-level data on mortality rates,
 
 Summary statistics:
 
-![YX scatterplot between mortality rates and income:](test.png){width="326"}
+<!-- ![YX scatterplot between mortality rates and income:](test.png){width="326"} -->
 
 ![](images/Bilde2.png)
 
@@ -84,7 +84,7 @@ The prediction interval is quite large \[569.035, 1139.147\] which we can also s
 
 **a)** Our dependent variable is still mortality. Our additional variables are: INCC, AGED, TOBC and EDU2. INCC, per capita income, is included as the main explanatory variable of interest.The reason for choosing EDU2 over EDU1 as to complete 4 years of college, you would have to complete high school or other equivalents. We expect that there would be a minor difference between a college and no college education. Economic theories and empirical research questions suggest that higher incomes are associated with better access to healthcare and improved living situations and healthier lifestyles. AGED, is the proportion of the population aged over 65 years, is included because mortality rates are naturally higher in states with older populations. Controlling for age structures ensures that the estimated effect of income is simply capturing demographic differences across states. TOBC, cigarette consumption per capita, is included because smoking is a major risk factor for mortality. Differences in smoking behavior across states may influence mortality independently of income. EDU2, the proportion of the population completing 4 or more years of college, is included as a proxy for human capital and health related behavior.  Higher education levels are generally associated with better health awareness, better access to healthcare and healthier lifestyles. Including these variables allows our coefficient on INCC to be interpreted as the partial effect of income on mortality, holding age structure, smoking behavior, and education constant. {{< pagebreak >}}
 
-b)
+b)  
 
 ![](images/Bilde7.png)
 

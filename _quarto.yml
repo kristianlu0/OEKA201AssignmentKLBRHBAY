@@ -9,16 +9,17 @@ project:
 
 website:
   title: "OEKA201AssignmentKLBRHBAY"
-left:
-    - text: Home
-      href: index.qmd
-    - text: Bjørnar's assignment using Gretl
-      href: assignment_gretl.qmd
-    - text: Bjørnar's assignment using R
-      href: assignment_r.qmd
-right:
-    - text: AI-conversation
-#      href: AIrep/qmdrds/conv.qmd
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Bjørnar's assignment using Gretl
+        href: assignment_gretl.qmd
+      - text: Bjørnar's assignment using R
+        href: assignment_r.qmd
+    right:
+      - text: AI-conversation
+#        href: AIrep/qmdrds/conv.qmd
 
 format:
   html:
