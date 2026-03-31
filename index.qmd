@@ -21,6 +21,4 @@ The assinment is presented in two versions:
  - [Bjørnar's assignment using Gretl](assignment_gretl.qmd) - estimation and analysis performed in Gretl
  - [Bjørnar's assignment using R](assignment_r.qmd) - the same analysis replicatied using R code
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
