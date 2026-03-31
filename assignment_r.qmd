@@ -183,10 +183,13 @@ Overall, the multiple regression model seems to give the most reliable predictio
 
 R/wordcount.R
 
-```{r}
-source("R/wordcount.R")
+# Word count
 
-count_words("assignment_r.qmd")
+```{r}
+#| echo: false
+source("wordcount.R")
+result <- count_words_in_qmd("assignment_r.qmd")
+cat(result$message)
 ```
 
 # Bibliography

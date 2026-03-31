@@ -1,69 +1,58 @@
-import re
+count_words_in_qmd <- function(filepath,
+                                include_code = FALSE,
+                                include_yaml = FALSE) {
+  text <- paste(readLines(filepath, warn = FALSE), collapse = "\n")
 
-def count_words_in_qmd(filepath: str,
-                       include_code: bool = False,
-                       include_yaml: bool = False) -> dict:
-  """
-    Count words in a Quarto (.qmd) document.
+  # ── 1. Extract YAML front matter ──────────────────────────────────────────
+  yaml_text <- ""
+  yaml_match <- regmatches(text, regexpr("^---\\s*\n.*?\n---\\s*\n", text, perl = TRUE))
+  if (length(yaml_match) > 0) {
+    yaml_text <- yaml_match[[1]]
+    text <- sub("^---\\s*\n.*?\n---\\s*\n", "", text, perl = TRUE)
+  }
 
-    Args:
-        filepath:     Path to the .qmd file.
-        include_code: If True, count words inside code chunks (```{...}).
-        include_yaml: If True, count words in the YAML front matter (--- block).
+  # ── 2. Extract executable code chunks  ```{lang} ... ``` ──────────────────
+  code_pattern <- "```+\\{[^}]*\\}.*?```+"
+  code_chunks  <- regmatches(text, gregexpr(code_pattern, text, perl = TRUE))[[1]]
+  code_text    <- paste(code_chunks, collapse = " ")
+  prose_text   <- gsub(code_pattern, "", text, perl = TRUE)
 
-    Returns:
-        A dict with keys:
-            'total'     – words counted under the chosen options
-            'prose'     – words in prose only (no code, no YAML)
-            'code'      – words inside code chunks
-            'yaml'      – words in the YAML front matter
-    """
-with open(filepath, "r", encoding="utf-8") as f:
-  text = f.read()
+  # Remove plain fenced blocks ``` ... ```
+  prose_text <- gsub("```+.*?```+", "", prose_text, perl = TRUE)
 
-# ── 1. Strip YAML front matter (opening --- ... ---) ──────────────────────
-yaml_text = ""
-yaml_pattern = re.compile(r"^---\s*\n(.*?)\n---\s*\n", re.DOTALL)
-yaml_match = yaml_pattern.match(text)
-if yaml_match:
-  yaml_text = yaml_match.group(1)
-text = text[yaml_match.end():]          # remainder after front matter
+  # ── 3. Strip inline code ──────────────────────────────────────────────────
+  prose_text <- gsub("`[^`]+`", "", prose_text, perl = TRUE)
 
-# ── 2. Extract fenced code chunks  ```{lang} ... ``` ──────────────────────
-code_text = ""
-code_pattern = re.compile(r"```+\{[^}]*\}.*?```+", re.DOTALL)  # executable chunks
-bare_fence_pattern = re.compile(r"```+.*?```+", re.DOTALL)      # plain fenced blocks
+  # ── 4. Strip markdown syntax ──────────────────────────────────────────────
+  prose_text <- gsub("(?m)^\\s*#{1,6}\\s*", "", prose_text, perl = TRUE)  # headings
+  prose_text <- gsub("!?\\[([^\\]]*)\\]\\([^)]*\\)", "\\1", prose_text, perl = TRUE)  # links
+  prose_text <- gsub("[*_~]{1,3}([^*_~]+)[*_~]{1,3}", "\\1", prose_text, perl = TRUE) # emphasis
+  prose_text <- gsub("(?m)^\\s*[-*+>|]\\s*", "", prose_text, perl = TRUE) # list markers
 
-code_chunks = code_pattern.findall(text)
-code_text = " ".join(code_chunks)
-prose_text = code_pattern.sub("", text)          # remove executable chunks
-prose_text = bare_fence_pattern.sub("", prose_text)  # remove plain fenced blocks
+  # ── 5. Word counter helper ────────────────────────────────────────────────
+  count_words <- function(s) {
+    length(gregexpr("\\b\\w+\\b", s, perl = TRUE)[[1]])
+  }
 
-# ── 3. Strip inline code  `...` from prose ────────────────────────────────
-prose_text = re.sub(r"`[^`]+`", "", prose_text)
+  counts <- list(
+    prose = count_words(prose_text),
+    code  = count_words(code_text),
+    yaml  = count_words(yaml_text)
+  )
 
-# ── 4. Strip markdown syntax from prose ───────────────────────────────────
-prose_text = re.sub(r"^\s*#{1,6}\s*", "", prose_text, flags=re.MULTILINE)  # headings
-prose_text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", prose_text)         # links/images
-prose_text = re.sub(r"[*_~]{1,3}([^*_~]+)[*_~]{1,3}", r"\1", prose_text)  # emphasis
-    prose_text = re.sub(r"^\s*[-*+>|]\s*", "", prose_text, flags=re.MULTILINE) # list/blockquote markers
+  total <- counts$prose
+  if (include_code) total <- total + counts$code
+  if (include_yaml) total <- total + counts$yaml
+  counts$total <- total
 
-    # ── 5. Helper: split into words ───────────────────────────────────────────
-    def _word_count(s: str) -> int:
-        return len(re.findall(r"\b\w+\b", s))
+  return(counts)
+}
 
-    counts = {
-        "prose": _word_count(prose_text),
-        "code":  _word_count(code_text),
-        "yaml":  _word_count(yaml_text),
-    }
+# ── Example usage ─────────────────────────────────────────────────────────
+result <- count_words_in_qmd("document.qmd", include_code = FALSE, include_yaml = FALSE)
 
-    total = counts["prose"]
-    if include_code:
-        total += counts["code"]
-    if include_yaml:
-        total += counts["yaml"]
-    counts["total"] = total
-
-    return counts
-
+cat(sprintf("Prose words  : %6d\n", result$prose))
+cat(sprintf("Code words   : %6d\n", result$code))
+cat(sprintf("YAML words   : %6d\n", result$yaml))
+cat(sprintf("─────────────────────\n"))
+cat(sprintf("Total counted: %6d\n", result$total))
