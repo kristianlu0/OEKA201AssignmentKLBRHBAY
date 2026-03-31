@@ -181,6 +181,14 @@ The multiple regression model, on the other hand, includes several variables tha
 
 Overall, the multiple regression model seems to give the most reliable predictions and therefore it is the preferred model in this analysis.
 
+R/wordcount.R
+
+```{r}
+source("R/wordcount.R")
+
+count_words("assignment_r.qmd")
+```
+
 # Bibliography
 
 Maddalena Lettino, J. M. (2022, Februar 15). *Cardiovascular disease in the elderly: proceedings of the European Society of Cardiology—Cardiovascular Round Table - Oxford Academic*. Hentet fra Oxford Academic: https://academic.oup.com/eurjpc/article/29/10/1412/6529006
