@@ -5,6 +5,12 @@ format: pdf
 editor: visual
 ---
 
+```{r}
+#| echo: false
+#| message: false
+source("Script/estm.R")
+```
+
 ![](images/Skjermbilde%202026-03-10%20115720.png) {{< pagebreak >}}
 
 # Step B: Analysis
@@ -18,15 +24,29 @@ We use a cross-sectional dataset containing state-level data on mortality rates,
 
 Summary statistics:
 
-<!-- ![YX scatterplot between mortality rates and income:](test.png){width="326"} -->
-
-![](images/Bilde2.png)
+```{r}
+plot(data$INCC, data$MORT,
+     main = "Scatterplot of mortality rate and income",
+     xlab = "INCC",
+     ylab = "MORT",
+     pch = 1,
+     col = "darkgreen")
+text(data$INCC, data$MORT,
+     labels = data$obs,
+     cex = 0.7,
+     pos = 4)
+abline(enkelreg)
+```
 
 The dataset consists of 51 cross-sectional observations (all 50 states plus District of Columbia), with no missing values. The dependent variable MORT (mortality rates per 100 000 population), has a mean of 855,01 and a standard deviation of 137,97, ranging from 396,20 to 1120,5. The coefficient of variation is 0,16136 in the dependent variable. This is relevant for the research question because mortality rates vary meaningfully across states, making simple and multiple regression model analysis appropriate. {{< pagebreak >}}
 
 # **2. Simple Regression Model**
 
 **a)**
+
+```{r}
+summary(enkelreg)
+```
 
 ![](images/Bilde3.png)
 
