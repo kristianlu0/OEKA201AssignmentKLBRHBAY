@@ -3,10 +3,17 @@ title: "OEKA201Assignment<KLBRHBAY>"
 ---
 ## Welcome
 This website presents the assignments for OEKA201 completed by:
+
+
 - **Bertelsen, Fredrik-André Hov**
+
+
 - **Yousefi, Arya**
+
 - **Røijem, Bendik Strømme**
+
 - **Lund, Kristian**
+
 ## About this website
 The site contains our econmetrics assignmetn analysing mortality rates across US states using socioeconomic & health-related variables.
 

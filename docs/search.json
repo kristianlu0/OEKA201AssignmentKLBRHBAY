@@ -4,13 +4,20 @@
     "href": "index.html",
     "title": "OEKA201Assignment",
     "section": "",
-    "text": "This website presents the assignments for OEKA201 completed by: - Bertelsen, Fredrik-André Hov - Yousefi, Arya - Røijem, Bendik Strømme - Lund, Kristian ## About this website The site contains our econmetrics assignmetn analysing mortality rates across US states using socioeconomic & health-related variables.\nThe assinment is presented in two versions: - Bjørnar’s assignment using Gretl - estimation and analysis performed in Gretl - Bjørnar’s assignment using R - the same analysis replicatied using R code\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This website presents the assignments for OEKA201 completed by:\n\nBertelsen, Fredrik-André Hov\nYousefi, Arya\nRøijem, Bendik Strømme\nLund, Kristian"
   },
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
     "title": "OEKA201Assignment",
     "section": "",
-    "text": "This website presents the assignments for OEKA201 completed by: - Bertelsen, Fredrik-André Hov - Yousefi, Arya - Røijem, Bendik Strømme - Lund, Kristian ## About this website The site contains our econmetrics assignmetn analysing mortality rates across US states using socioeconomic & health-related variables.\nThe assinment is presented in two versions: - Bjørnar’s assignment using Gretl - estimation and analysis performed in Gretl - Bjørnar’s assignment using R - the same analysis replicatied using R code\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This website presents the assignments for OEKA201 completed by:\n\nBertelsen, Fredrik-André Hov\nYousefi, Arya\nRøijem, Bendik Strømme\nLund, Kristian"
+  },
+  {
+    "objectID": "index.html#about-this-website",
+    "href": "index.html#about-this-website",
+    "title": "OEKA201Assignment",
+    "section": "About this website",
+    "text": "About this website\nThe site contains our econmetrics assignmetn analysing mortality rates across US states using socioeconomic & health-related variables.\nThe assinment is presented in two versions: - Bjørnar’s assignment using Gretl - estimation and analysis performed in Gretl - Bjørnar’s assignment using R - the same analysis replicatied using R code\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   }
 ]
