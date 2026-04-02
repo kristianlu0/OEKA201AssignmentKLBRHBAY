@@ -1,15 +1,15 @@
 # estm.R
 
-data <- read.csv("data-raw/csv/Dataset_in.csv")
-head(data)
+df <- read.csv("data-raw/csv/Dataset_in.csv")
+head(df)
 
 # Simple regression
-enkelreg <- lm(MORT ~ INCC, data = data)
+enkelreg <- lm(MORT ~ INCC, data = df)
 enkelreg
 summary(enkelreg)
 
 # Scatterplot
-plot(data$INCC, data$MORT,
+plot(df$INCC, df$MORT,
      main = "Scatterplot of mortality rate and income",
      xlab = "INCC",
      ylab = "MORT",
@@ -17,6 +17,6 @@ plot(data$INCC, data$MORT,
 abline(enkelreg)
 
 # Multiple regression
-multireg <- lm(MORT ~ INCC + POV + EDU1 + EDU2 + ALCC + TOBC + HEXC + PHYS + URB + AGED, data = data)
+multireg <- lm(MORT ~ INCC + POV + EDU1 + EDU2 + ALCC + TOBC + HEXC + PHYS + URB + AGED, data = df)
 summary(multireg)
 
