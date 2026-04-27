@@ -1,7 +1,7 @@
 ---
 title: "assignement_gretl.qmd"
 author: "KLBRHBAY"
-format: pdf
+
 editor: visual
 ---
 
