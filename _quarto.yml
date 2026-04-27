@@ -24,11 +24,23 @@ website:
 format:
   html:
     toc: true
+    toc-depth: 3
+    number-sections: false
+    mainfont: monospace
+    css: styles.css
   docx:
     toc: true
+    toc-depth: 3
+    number-sections: false
   pdf:
     toc: true
+    toc-depth: 3
+    number-sections: false
+    lof: true
+    lot: true
   epub:
     toc: true
+    toc-depth: 3
+    number-sections: false
+    mainfont: Arial
 
-bibliography: ref.bib

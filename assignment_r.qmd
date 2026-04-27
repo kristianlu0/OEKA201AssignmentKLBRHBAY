@@ -181,8 +181,6 @@ The multiple regression model, on the other hand, includes several variables tha
 
 Overall, the multiple regression model seems to give the most reliable predictions and therefore it is the preferred model in this analysis.
 
-R/wordcount.R
-
 # Word count
 
 ```{r}
