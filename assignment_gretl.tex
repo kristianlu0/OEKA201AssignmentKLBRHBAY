@@ -1,4 +1,5 @@
 % Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -7,21 +8,22 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrartcl}
-
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else  
-    % xetex/luatex font selection
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -39,9 +41,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -67,8 +66,7 @@
 \makeatother
 
 
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -80,17 +78,33 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -134,14 +148,9 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
-
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
-
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={assignement\_gretl.qmd},
   pdfauthor={KLBRHBAY},
@@ -156,7 +165,6 @@
 \title{assignement\_gretl.qmd}
 \author{KLBRHBAY}
 \date{}
-
 \begin{document}
 \maketitle
 
@@ -169,7 +177,8 @@
 \listoffigures
 \listoftables
 
-\includegraphics{images/Skjermbilde 2026-03-10 115720.png} \newpage{}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Skjermbilde 2026-03-10 115720.png}}
+\newpage{}
 
 \section{Step B: Analysis}\label{step-b-analysis}
 
@@ -193,7 +202,7 @@ Mortality rates across states.
 
 Summary statistics:
 
-\includegraphics{images/Bilde2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde2.png}}
 
 The dataset consists of 51 cross-sectional observations (all 50 states
 plus District of Columbia), with no missing values. The dependent
@@ -209,11 +218,11 @@ Model}}{2. Simple Regression Model}}\label{simple-regression-model}
 
 \textbf{a)}
 
-\includegraphics{images/Bilde3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde3.png}}
 
 \includegraphics[width=1.67708in,height=0.16667in]{assignment_gretl_files/mediabag/wNtCyln93qMNgAAAABJR.png}
 
-\includegraphics[width=1.85417in,height=\textheight]{assignment_gretl_files/mediabag/8PJUTcKBj9OuMAAAAASU.png}
+\includegraphics[width=1.85417in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/8PJUTcKBj9OuMAAAAASU.png}
 
 The model is estimated to use 51 observations. The estimated intercept
 is 908,592 and the coefficient for income (INCC) is --0,00404. The
@@ -222,7 +231,7 @@ R-squared is 0,0040 and the F-statistic is 0,197 with a p-value of
 
 \textbf{2B:}
 
-\includegraphics{images/Bilde4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde4.png}}
 
 When INCC is 0, expected mortality is 908.592 (ß0). Since an income
 level of zero is outside the realistic range of the data, the intercept
@@ -236,7 +245,7 @@ units, holding everything else constant.
 Mathematically:
 
 Expect that income increases by 1000 units:
-\includegraphics[width=1.44792in,height=\textheight]{images/clipboard-3821177194.png}
+\includegraphics[width=1.44792in,height=\textheight,keepaspectratio]{images/clipboard-3821177194.png}
 
 The model suggests a negative relationship between income and mortality.
 A higher income is associated with lower mortality. Which is the public
@@ -246,10 +255,11 @@ healthcare. \newpage{}
 
 \textbf{2c)}
 
-\includegraphics{images/Bilde5.png} \newpage{}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde5.png}}
+\newpage{}
 
 \textbf{2d)} From the summary statistics table:
-~\includegraphics[width=2.41667in,height=\textheight]{assignment_gretl_files/mediabag/wPjWv8VgjX2SQAAAABJR.png}
+~\includegraphics[width=2.41667in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/wPjWv8VgjX2SQAAAABJR.png}
 
 INCC represents income per capita, measured in U.S. dollars for each
 state.
@@ -265,7 +275,7 @@ INCC max = 18187
 Substitute into the equation:
 
 When INCC = 9187:
-\includegraphics[width=3.19792in,height=\textheight]{assignment_gretl_files/mediabag/8HMdAhEeWBlc0AAAAASU.png}
+\includegraphics[width=3.19792in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/8HMdAhEeWBlc0AAAAASU.png}
 
 When INCC = 13249:
 \includegraphics[width=1.02083in,height=0.1875in]{assignment_gretl_files/mediabag/x9egTbLEXubfAf2WBfwB.png}
@@ -280,11 +290,11 @@ sample. \newpage{}
 
 \textbf{2e)}
 
-\includegraphics{images/Bilde6.jpg}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde6.jpg}}
 
 The prediction interval is quite large {[}569.035, 1139.147{]} which we
 can also see in
-\includegraphics[width=0.16667in,height=\textheight]{assignment_gretl_files/mediabag/IQ78F0Wz1gAAAABJRU5E.png}.
+\includegraphics[width=0.16667in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/IQ78F0Wz1gAAAABJRU5E.png}.
 This means that the model explains pretty much none of the variation of
 the mortality. That means that we can't use income as a regressor for
 simple regression to explain what leads to a higher mortality rate.
@@ -323,7 +333,7 @@ education constant. \newpage{}
 \item
 \end{enumerate}
 
-\includegraphics{images/Bilde7.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde7.png}}
 
 The multiple regression model is estimated by using 51 cross-sectional
 observations with MORT as the dependent variable. The estimated
@@ -351,7 +361,7 @@ indicating that the model is jointly statistically significant at the
 one dollar that ~increases in per capita, income is associated with an
 increase of 0.00466 in the mortality rate, holding other variables
 constant. Interpreting this per \$1000 increase:~
-\includegraphics[width=1.23958in,height=\textheight]{assignment_gretl_files/mediabag/zD1cUmZ4AAAAASUVORK5.png}\emph{\hfill\break
+\includegraphics[width=1.23958in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/zD1cUmZ4AAAAASUVORK5.png}\emph{\hfill\break
 }
 
 Thus, a \$1000 increase in per capita income is associated with an
@@ -362,7 +372,7 @@ must be evaluated in terms of statistical significance.
 The coefficient on EDU2 is --174.61. Since EDU2 is measured as a
 proportion, a 0.01 (one percentage point) increase in the share of
 college-educated individuals changes mortality by:
-\includegraphics[width=1.5in,height=\textheight]{assignment_gretl_files/mediabag/wBn3dS90apHUQAAAABJR.png}
+\includegraphics[width=1.5in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/wBn3dS90apHUQAAAABJR.png}
 
 Thus, a one percentage point increase in college education is associated
 with a reduction of approximately 1.75 deaths per 100,000 population,
@@ -376,7 +386,7 @@ cigarette consumption increases predicted mortality by approximately
 The coefficient on AGED is 5432.88. Since AGED is measured as a
 proportion, a 0.01 (one percentage point) increase in the share of the
 population over 65 increases mortality by:
-\includegraphics[width=1.53125in,height=\textheight]{assignment_gretl_files/mediabag/fHUlndH68MHVNbcia6HR.png}
+\includegraphics[width=1.53125in,height=\textheight,keepaspectratio]{assignment_gretl_files/mediabag/fHUlndH68MHVNbcia6HR.png}
 
 Thus, a one percentage point increase in the elderly population is
 associated with approximately 54 additional deaths per 100,000
@@ -444,7 +454,7 @@ we made a dummy variable where we set the mean as the threshold for
 effect the dummy variable. The mean where 13249.2, and it was set to be
 higher than mean income. We have seen that if the income is higher.
 
-\includegraphics{images/Bilde8.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde8.png}}
 
 We can see that a higher income than the mean will lead to a lower
 mortality. But this is insignificant as seen p the p-value being higher
@@ -458,7 +468,7 @@ in high income states. The control variables we want to have a look at
 is proportion of population over 65 (AGED), poverty (POV) and per-capita
 health expenditure by state (HEXC).
 
-\includegraphics{images/Bilde9.png}
+\pandocbounded{\includegraphics[keepaspectratio]{images/Bilde9.png}}
 
 We can directly see that it these variables that have the biggest impact
 on mortality. With the control variables we can now account for 86\% of
@@ -469,7 +479,7 @@ mortality. The other control variables do though, where age has the
 biggest effect. We wanted to have a further look at it and found that
 76\% of the variation is explained by age alone.
 
-\includegraphics[width=4.70833in,height=\textheight]{images/Bilde10.png}
+\includegraphics[width=4.70833in,height=\textheight,keepaspectratio]{images/Bilde10.png}
 
 This is quite ordinary, due to most death reporting's in this health
 groups being from age-related diseases. \newpage{}
@@ -507,7 +517,7 @@ therefore made a dummy variable where the threshold is an age above the
 median. With this dummy variable we found that 40\% of the model is
 explained by the dummy variable.
 
-\includegraphics[width=2.95833in,height=\textheight]{images/Bilde11.png}
+\includegraphics[width=2.95833in,height=\textheight,keepaspectratio]{images/Bilde11.png}
 
 We can therefore see that aged is one of the major factors for
 explaining mortality. ~We can also see that the states in with an age
