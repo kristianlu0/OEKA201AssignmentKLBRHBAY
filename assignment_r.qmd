@@ -133,11 +133,7 @@ This means that the model explains pretty much none of the variation of the mort
 
 b)  
 
-data <- read.csv("data-raw/csv/Dataset_in.csv")
-head(data)
-model <- lm(MORT ~ INCC + EDU2 + TOBC + AGED, data = data)
-summary(model)
-confint(model)
+data \<- read.csv("data-raw/csv/Dataset_in.csv") head(data) model \<- lm(MORT \~ INCC + EDU2 + TOBC + AGED, data = data) summary(model) confint(model)
 
 The multiple regression model is estimated by using 51 cross-sectional observations with MORT as the dependent variable. The estimated coefficients are:
 
@@ -189,15 +185,23 @@ The inclusion of variables such as cigarette consumption and the share of elderl
 
 **A)** We saw that income had a negative effect on mortality. Now we want to find out if there is a threshold where it changes? Therefore, we made a dummy variable where we set the mean as the threshold for effect the dummy variable. The mean where 13249.2, and it was set to be higher than mean income. We have seen that if the income is higher.
 
-![](images/Bilde8.png)
+```{r}
+#| eval: false
+data$high_income <- ifelse(data$INCC > mean(data$INCC), 1, 0)
+model_d1 <- lm(MORT ~ high_income, data = data)
+summary(model_d1)
+```
 
 We can see that a higher income than the mean will lead to a lower mortality. But this is insignificant as seen p the p-value being higher than the significance level of 0,05. With our significance level of 76% there is a large chance that the relationship between the dummy variable and income occurred by chance. We can therefore not conclude that the income threshold as an effect on the dependent variable. We therefore must add control variables to conclude if that it is income alone that drives the lower mortality, or if its other factors that tend to occur in high income states. The control variables we want to have a look at is proportion of population over 65 (AGED), poverty (POV) and per-capita health expenditure by state (HEXC).
-
-![](images/Bilde9.png)
+# Model 2 : income dummy variables + controls
+model_d2 <- lm(MORT ~ high_income + AGED + POV + HEXC, data = data)
+summary(model_d2)
 
 We can directly see that it these variables that have the biggest impact on mortality. With the control variables we can now account for 86% of the variation of the model. The model flags our dummy variable, since it’s having the biggest p-value for a non-constant.  We can therefore see that an income threshold doesn’t have an significant effect on mortality. The other control variables do though, where age has the biggest effect. We wanted to have a further look at it and found that 76% of the variation is explained by age alone.
+# Model 3: Aged Alone
+model_aged <- lm(MORT ~ AGED, data = data)
+summary(model_aged)
 
-![](images/Bilde10.png){width="452"}
 
 This is quite ordinary, due to most death reporting’s in this health groups being from age-related diseases. {{< pagebreak >}}
 
@@ -205,7 +209,9 @@ This is quite ordinary, due to most death reporting’s in this health groups be
 
 This suggests that the observed differences in mortality rates between stats are not primarily driven by whether income is above or below the mean threshold. Instead, demographic factors, particularly the proportion of elderly individuals in the population, appear to play a much more important role. Age structure has the strongest impact on mortality rates, which is consistent with the fact that mortality naturally increases with age. To test this, we made a new dummy variable were wanted to how much of the model is explained by an age. We therefore made a dummy variable where the threshold is an age above the median. With this dummy variable we found that 40% of the model is explained by the dummy variable.
 
-\<--![](images/Bilde11.png){width="284"}--\>
+data$high_age <- ifelse(data$AGED > median(data$AGED),1, 0)
+model_d3 <- lm(MORT ~ high_age, data=data)
+summary(model_d3)
 
 We can therefore see that aged is one of the major factors for explaining mortality.  We can also see that the states in with an age above the median has an higher mortality rate by 171.49, which provides further evidence for age being the major factor for explaining mortality. The P-value is also significant which provides evidence for that age being a factor in mortality.
 
@@ -231,8 +237,6 @@ The multiple regression model, on the other hand, includes several variables tha
 
 Overall, the multiple regression model seems to give the most reliable predictions and therefore it is the preferred model in this analysis.
 
-
-
 # Appendix
 
 ```{r}
@@ -240,7 +244,6 @@ source("Script/estm.R")
 ```
 
 R/wordcount.R
-
 
 # Word count
 
