@@ -14,14 +14,17 @@ author:
   - name: Lund, Kristian
     affiliation:
       - ref: HIOF
+editor: visual
+keywords:
+  - assignment
+  - R
+  - Gretl
+  - econometrics
 ---
-
-format: pdf editor: visual Keywords: \[assignment,R , Gretl, econmetrics\] ---
 
 ```{r}
 #| include: false
 df <- read.csv("data-raw/csv/Dataset_in.csv")
-
 ```
 
 ![](images/Skjermbilde%202026-03-10%20115720.png) {{< pagebreak >}}
