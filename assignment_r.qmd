@@ -130,7 +130,11 @@ This means that the model explains pretty much none of the variation of the mort
 
 b)  
 
-![](images/Bilde7.png)
+data <- read.csv("data-raw/csv/Dataset_in.csv")
+head(data)
+model <- lm(MORT ~ INCC + EDU2 + TOBC + AGED, data = data)
+summary(model)
+confint(model)
 
 The multiple regression model is estimated by using 51 cross-sectional observations with MORT as the dependent variable. The estimated coefficients are:
 
